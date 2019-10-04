@@ -1,0 +1,120 @@
+{if $packages}
+	{var $installs = count($packages)}
+	{var $colls1 = $installs % 1}
+	{var $colls2 = $installs % 2}
+	{var $colls3 = $installs % 3}
+
+	{if $installs == 1}
+		{var $class = 'col-sm-12'}
+	{elseif $colls2 == 0 && $colls3 != 0}
+		{var $class = 'col-sm-12 col-md-6'}
+	{elseif $colls2 != 0 && $colls3 == 0}
+		{var $class = 'col-sm-12 col-md-4'}
+	{else}
+		{var $class = 'col-sm-12 col-md-4'}
+	{/if}
+
+
+
+	<div n:if="$packages" class="row docs-premium-template" style="display: flex;flex-flow: row wrap;">
+		<div n:foreach="$packages as $name => $package" class="{$class}">
+			<div class="box box-solid">
+
+				<div class="box-body">
+
+					<h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+						PREMIUM SOUTĚŽ
+					</h4>
+					{if $control["packagesInstallForm-$name"]->hasErrors()}
+					{foreach $control["packagesInstallForm-$name"]->getErrors() as $err}
+						<div class="alert alert-warning alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							{$err}
+						</div>
+					{/foreach}
+					{/if}
+
+					<div class="media">
+						<div class="media-left">
+							<a href="#" class="ad-click-event">
+								<img n:img="$control->getImage($name, $package['package'])->identifier, '150x100', exact" class="media-object" style="width: 150px;height: auto;border-radius: 4px;box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+							</a>
+						</div>
+						<div class="media-body">
+							<div class="clearfix">
+								<p class="pull-right">
+									<a data-toggle="collapse" href="#{$name}" class="btn btn-success btn-sm ad-click-event" aria-expanded="false" aria-controls="footwear">Nový balíček</a>
+								</p>
+
+								<h4 style="margin-top: 0">{$package['name']}</h4>
+
+								<p>{$package['description']}</p>
+								<p style="margin-bottom: 0">
+									<i class="fa fa-shopping-cart margin-r5"></i> {_admin.instances, $package['instances']}
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="collapse" id="{$name}" style="margin-top: 10px;">
+						{if $package['install']}
+						{control packagesInstallForm-$name}
+						{else}
+							<div class="alert alert-info" role="alert">
+								<strong>{$name|firstUpper}</strong> připravujeme...
+							</div>
+						{/if}
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+{/if}
+
+
+{*
+
+Pexeso
+
+<a n:href="install!" class="btn btn-link btn-info">Install</a>
+<a n:href="uninstall!" class="btn btn-link btn-danger">Uninstall</a>
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-info">
+	Click Me
+</button>
+
+<p><a data-toggle="collapse" href="#footwear" aria-expanded="false" aria-controls="footwear">Heading</a>
+</p>
+
+
+<div class="collapse" id="footwear">
+	{control packageForm}
+</div>
+
+<div class="modal modal-info fade in" id="modal-info">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span></button>
+				<h4 class="modal-title">Info Modal</h4>
+			</div>
+			<div class="modal-body">
+				<p>One fine body…</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-outline">Save changes</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+*}

@@ -1,0 +1,10 @@
+### Editor
+.idea
+
+### Composer template
+composer.phar
+composer.lock
+/vendor/
+
+/resources/assets/AdminLTE/
+/resources/assets/font-awesome/

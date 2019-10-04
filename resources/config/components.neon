@@ -1,0 +1,15 @@
+services:
+
+#	cms.contest.controls.installPackageControl:
+#		implement: Devrun\CmsModule\ContestModule\Controls\IInstallPackageControlFactory
+#		setup:
+#			- setImages(%contest%)
+#		tags: [devrun.control, administration: [
+#			category: Dashboard
+#			name: Hra Pexeso - 1$
+#			description: Určitě to znáte. Stačí najít dvě karty se stejným symbolem a postupně otočit karty všechny.
+#			img: /images/pexeso/theme-default/pexeso-mini.png
+#			priority: 5
+#		]]
+#		inject: true
+

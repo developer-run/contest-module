@@ -1,0 +1,16 @@
+services:
+
+	cms.contest.presenters.package:
+		class: Devrun\CmsModule\ContestModule\Presenters\PackagePresenter
+		tags: [devrun.presenter, administration: [
+			link: ':Cms:Contest:Package:default'
+			icon: fa-id-card-o
+#			category: modules.pexeso
+			category: Content
+			name: Packages
+			description: Manage packages
+			priority: 20
+		]]
+
+
+

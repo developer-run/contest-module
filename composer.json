@@ -1,0 +1,52 @@
+{
+  "name": "devrun/contest-module",
+  "description": "DevRun Contest module",
+  "keywords": ["cms", "devrun", "contest"],
+  "minimum-stability": "dev",
+  "homepage": "http://devrun.cz",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pavel Paulík"
+    }
+  ],
+  "require": {
+    "devrun/cms-module": "^0.8",
+    "devrun/article-module": "^0.8",
+    "devrun/phantom-module": "^0.1"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/developer-run/article-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/developer-run/phantom-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/developer-run/cms-module"
+    }
+  ],
+  "autoload": {
+    "classmap": ["src/"]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "PhantomInstaller\\Installer::installPhantomJS"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.8-dev"
+    },
+    "devrun": {
+      "configuration": {
+        "extensions": {
+          "contest": "Devrun\\ContestModule\\DI\\ContestExtension"
+        }
+      }
+    }
+  }
+}
