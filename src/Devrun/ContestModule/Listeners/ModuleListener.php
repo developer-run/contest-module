@@ -47,8 +47,11 @@ class ModuleListener implements Subscriber
 
 
     /**
+     *
+     *
      * @param ModuleFacade $moduleFacade
-     * @param string       $moduleName
+     * @param string $moduleName
+     * @throws \Exception
      */
     public function onUpdate(ModuleFacade $moduleFacade, $moduleName)
     {
@@ -83,8 +86,11 @@ class ModuleListener implements Subscriber
 
     function getSubscribedEvents()
     {
+        /**
+         * @todo deprecated
+         */
         return [
-            'Devrun\Module\ModuleFacade::onUpdate'
+//            'Devrun\Module\ModuleFacade::onUpdate'
         ];
     }
 }
