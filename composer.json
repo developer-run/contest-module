@@ -42,9 +42,6 @@
     ]
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.8-dev"
-    },
     "devrun": {
       "configuration": {
         "extensions": {
