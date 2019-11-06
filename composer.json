@@ -13,9 +13,13 @@
   "require": {
     "devrun/cms-module": "v0.8.*",
     "devrun/article-module": "v0.8.*",
-    "devrun/phantom-module": "0.1.*"
+    "devrun/phantom-module": "dev-master"
   },
   "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/developer-run/framework"
+    },
     {
       "type": "vcs",
       "url": "https://github.com/developer-run/article-module"
