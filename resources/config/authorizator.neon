@@ -1,0 +1,13 @@
+services:
+	acl:
+		factory: Devrun\Security\Authorizator
+		setup:
+# ------------------------------------------------------ #
+			- addResource(Cms:Contest:Package)
+			- allow(member, Cms:Contest:Package)
+			- deny(member, Cms:Contest:Package, deleteDefault)
+			- allow(admin, Cms:Contest:Package)
+			- deny(admin, Cms:Contest:Package, deleteDefault)
+			- allow(supervisor, Cms:Contest:Package, deleteDefault)
+
+# ------------------------------------------------------ #

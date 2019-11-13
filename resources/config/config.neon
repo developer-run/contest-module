@@ -1,3 +1,4 @@
 includes:
 	- components.neon
 	- presenters.neon
+	- authorizator.neon
