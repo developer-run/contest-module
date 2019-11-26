@@ -3,6 +3,7 @@
   "description": "DevRun Contest module",
   "keywords": ["cms", "devrun", "contest"],
   "minimum-stability": "dev",
+  "version": "v0.1.0",
   "homepage": "http://devrun.cz",
   "license": "proprietary",
   "authors": [
@@ -43,7 +44,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "*"
+      "dev-master": "0.1-dev"
     },
     "devrun": {
       "configuration": {
