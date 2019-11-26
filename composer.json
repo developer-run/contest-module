@@ -14,7 +14,7 @@
   "require": {
     "devrun/cms-module": "v0.8.*",
     "devrun/article-module": "v0.8.*",
-    "devrun/phantom-module": "dev-master"
+    "devrun/phantom-module": "v4.6.*"
   },
   "repositories": [
     {
